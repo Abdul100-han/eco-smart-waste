@@ -150,7 +150,15 @@ export default function CollectPage() {
       const text = response.text()
       
       try {
-        const parsedResult = JSON.parse(text)
+        // const parsedResult = JSON.parse(text)
+
+        // const text = response.text();
+
+        const cleanedText = text.replace(/```json|```/g, "").trim(); // Remove markdown formatting
+
+        const parsedResult = JSON.parse(cleanedText);
+
+
         setVerificationResult({
           wasteTypeMatch: parsedResult.wasteTypeMatch,
           quantityMatch: parsedResult.quantityMatch,
