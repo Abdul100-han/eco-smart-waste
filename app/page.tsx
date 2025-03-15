@@ -1,7 +1,7 @@
 // @ts-nocheck
 'use client'
 import { useState, useEffect } from 'react'
-import { ArrowRight, Leaf, Recycle, Users, Coins, MapPin, ChevronRight } from 'lucide-react'
+import { ArrowRight, Globe, Recycle, Users, Coins, MapPin, ChevronRight } from 'lucide-react'
 import { Button } from '@/components/ui/button'
 import { Poppins } from 'next/font/google'
 import Link from 'next/link'
@@ -16,13 +16,13 @@ const poppins = Poppins({
 function AnimatedGlobe() {
   return (
     <div className="relative w-32 h-32 mx-auto mb-8">
-      <div className="absolute inset-0 rounded-full bg-green-500 opacity-20 animate-pulse"></div>
-      <div className="absolute inset-2 rounded-full bg-green-400 opacity-40 animate-ping"></div>
-      <div className="absolute inset-4 rounded-full bg-green-300 opacity-60 animate-spin"></div>
-      <div className="absolute inset-6 rounded-full bg-green-200 opacity-80 animate-bounce"></div>
-      <Leaf className="absolute inset-0 m-auto h-16 w-16 text-green-600 animate-pulse" />
+      <div className="absolute inset-0 rounded-full bg-blue-500 opacity-20 animate-pulse"></div>
+      <div className="absolute inset-2 rounded-full bg-blue-400 opacity-40 animate-ping"></div>
+      <div className="absolute inset-4 rounded-full bg-blue-300 opacity-60 animate-spin"></div>
+      <div className="absolute inset-6 rounded-full bg-blue-200 opacity-80 animate-bounce"></div>
+      <Globe className="absolute inset-0 m-auto h-16 w-16 text-blue-600 animate-pulse" />
     </div>
-  )
+  );
 }
 
 export default function Home() {
@@ -105,7 +105,7 @@ export default function Home() {
       
       <section className="grid md:grid-cols-3 gap-10 mb-20">
         <FeatureCard
-          icon={Leaf}
+          icon={Globe}
           title="Eco-Friendly"
           description="Contribute to a cleaner environment by reporting and collecting waste."
         />
@@ -127,7 +127,7 @@ export default function Home() {
           <ImpactCard title="Waste Collected" value={`${impactData.wasteCollected} kg`} icon={Recycle} />
           <ImpactCard title="Reports Submitted" value={impactData.reportsSubmitted.toString()} icon={MapPin} />
           <ImpactCard title="Tokens Earned" value={impactData.tokensEarned.toString()} icon={Coins} />
-          <ImpactCard title="CO2 Offset" value={`${impactData.co2Offset} kg`} icon={Leaf} />
+          <ImpactCard title="CO2 Offset" value={`${impactData.co2Offset} kg`} icon={Globe} />
         </div>
       </section>
     </div>
