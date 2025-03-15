@@ -83,19 +83,19 @@ export default function Home() {
       <section className="text-center mb-20">
         <AnimatedGlobe />
         <h1 className="text-6xl font-bold mb-6 text-gray-800 tracking-tight">
-          Eco Smart <span className="text-green-600">Waste Management</span>
+          Eco Smart <span className="text-blue-600">Waste Management</span>
         </h1>
         <p className="text-xl text-gray-600 max-w-2xl mx-auto leading-relaxed mb-8">
           Join our community in making waste management more efficient and rewarding!
         </p>
         {!loggedIn ? (
-          <Button onClick={login} className="bg-green-600 hover:bg-green-700 text-white text-lg py-6 px-10 rounded-full font-medium transition-all duration-300 ease-in-out transform hover:scale-105">
+          <Button onClick={login} className="bg-blue-600 hover:bg-blue-700 text-white text-lg py-6 px-10 rounded-full font-medium transition-all duration-300 ease-in-out transform hover:scale-105">
             Get Started
             <ArrowRight className="ml-2 h-5 w-5" />
           </Button>
         ) : (
           <Link href="/report">
-            <Button className="bg-green-600 hover:bg-green-700 text-white text-lg py-6 px-10 rounded-full font-medium transition-all duration-300 ease-in-out transform hover:scale-105">
+            <Button className="bg-blue-600 hover:bg-blue-700 text-white text-lg py-6 px-10 rounded-full font-medium transition-all duration-300 ease-in-out transform hover:scale-105">
               Report Waste
               <ArrowRight className="ml-2 h-5 w-5" />
             </Button>
@@ -130,29 +130,27 @@ export default function Home() {
           <ImpactCard title="CO2 Offset" value={`${impactData.co2Offset} kg`} icon={Leaf} />
         </div>
       </section>
-
-   
     </div>
   )
 }
 
-function ImpactCard({ title, value, icon: Icon }: { title: string; value: string | number; icon: React.ElementType }) {
+function ImpactCard({ title, value, icon: Icon }) {
   const formattedValue = typeof value === 'number' ? value.toLocaleString('en-US', { maximumFractionDigits: 1 }) : value;
   
   return (
     <div className="p-6 rounded-xl bg-gray-50 border border-gray-100 transition-all duration-300 ease-in-out hover:shadow-md">
-      <Icon className="h-10 w-10 text-green-500 mb-4" />
+      <Icon className="h-10 w-10 text-blue-500 mb-4" />
       <p className="text-3xl font-bold mb-2 text-gray-800">{formattedValue}</p>
       <p className="text-sm text-gray-600">{title}</p>
     </div>
   )
 }
 
-function FeatureCard({ icon: Icon, title, description }: { icon: React.ElementType; title: string; description: string }) {
+function FeatureCard({ icon: Icon, title, description }) {
   return (
     <div className="bg-white p-8 rounded-xl shadow-md hover:shadow-lg transition-all duration-300 ease-in-out flex flex-col items-center text-center">
-      <div className="bg-green-100 p-4 rounded-full mb-6">
-        <Icon className="h-8 w-8 text-green-600" />
+      <div className="bg-blue-100 p-4 rounded-full mb-6">
+        <Icon className="h-8 w-8 text-blue-600" />
       </div>
       <h3 className="text-xl font-semibold mb-4 text-gray-800">{title}</h3>
       <p className="text-gray-600 leading-relaxed">{description}</p>
